@@ -1,17 +1,10 @@
-esp8266-oled-ssd1306 [![Build Status](https://travis-ci.org/squix78/esp8266-oled-ssd1306.svg?branch=dev-branch-3.0.0)](https://travis-ci.org/squix78/esp8266-oled-ssd1306)
+particle-oled-sh1106
 ============
 
 > We just released version 3.0.0. Please have a look at our [upgrade guide](UPGRADE-3.0.md)
 
-This is a driver for the SSD1306 based 128x64 pixel OLED display running on the Arduino/ESP8266 platform.
-Can be used with either the I2C or SPI version of the display
-
-You can either download this library as a zip file and unpack it to your Arduino/libraries folder or (once it has been added) choose it from the Arduino library manager.
-
-It is also available as a platformio library. Just execute the following command:
-```
-platformio lib install 562
-```
+This is a driver for the SH1106 based 128x64 pixel OLED display running on the Particle platform.
+Can be used with the I2C version of the display
 
 ## Credits
 This library has initially been written by Daniel Eichhorn (@squix78). Many thanks go to Fabrice Weinberg (@FWeinb) for optimizing and refactoring many aspects of the library. Also many thanks to the many committers who helped to add new features and who fixed many bugs.
@@ -57,48 +50,9 @@ The library supports different protocols to access the OLED display. Currently t
 
 ```C++
 #include <Wire.h>  
-#include "SSD1306.h"
-
-SSD1306  display(ADDRESS, SDA, SDC);
-```
-or for a SH1106:
-```C++
-#include <Wire.h>  
 #include "SH1106.h"
 
-SH1106  display(ADDRESS, SDA, SDC);
-```
-
-### I2C with brzo_i2c
-
-```C++
-#include <brzo_i2c.h>
-#include "SSD1306Brzo.h"
-
-SSD1306Brzo display(ADDRESS, SDA, SDC);
-```
-or for the SH1106:
-```C++
-#include <brzo_i2c.h>
-#include "SH1106Brzo.h"
-
-SH1106Brzo display(ADDRESS, SDA, SDC);
-```
-
-### SPI
-
-```C++
-#include <SPI.h>
-#include "SSD1306Spi.h"
-
-SSD1306Spi display(RES, DC, CS);
-```
-or for the SH1106:
-```C++
-#include <SPI.h>
-#include "SH1106Spi.h"
-
-SH1106Spi display(RES, DC, CS);
+SH1106  display(ADDRESS);
 ```
 
 ## API
